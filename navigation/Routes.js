@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createDrawerNavigator } from "@react-navigation/drawer";
 
 import { auth } from "../components/Firebase/firebase";
 import navigationTheme from "./navigationTheme";
 import AuthStack from "./AuthStack";
 import AppStack from "./AppStack";
+import AppDrawer from "./AppDrawer";
 import { AuthUserContext } from "./AuthUserProvider";
 import Spinner from "../components/Spinner";
 
@@ -34,7 +34,7 @@ export default function Routes() {
 
   return (
     <NavigationContainer theme={navigationTheme}>
-      {user ? <AppStack /> : <AuthStack />}
+      {user ? <AppDrawer /> : <AuthStack />}
     </NavigationContainer>
   );
 }
